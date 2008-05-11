@@ -1,9 +1,9 @@
-%define snap 20080504
+%define snap 20080511
 
 Summary: 	Mandriva Xfce configuration files
 Name:    	mandriva-xfce-config
 Version: 	2008.1
-Release: 	%mkrel 12
+Release: 	%mkrel 13
 Group:   	Graphical desktop/Xfce
 License: 	GPLv2+
 URL:		http://wiki.mandriva.com/en/Development/Ideas/XFCE
@@ -99,8 +99,11 @@ Configuration files for Mandriva Powerpack Xfce desktop environment.
 
 %install
 rm -rf %{buildroot}
-
-export sysconfdir=%{_sysconfdir}
+%if %mdkversion < 200900
+export sysconfdir=%{_sysconfdir}/X11/xdg
+%else
+export sysconfdir=%{_sysconfdir}/xdg
+%endif
 export localstatedir=%{_localstatedir}
 export iconsdir=%{_iconsdir}
 
@@ -170,10 +173,17 @@ fi
 %files -n %{name}-common
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog README.update.urpmi
+%if %mdkversion < 200900
 %{_sysconfdir}/X11/xdg/Terminal/*
 %{_sysconfdir}/X11/xdg/Thunar/*
 %{_sysconfdir}/X11/xdg/autostart/*
 %{_sysconfdir}/X11/xdg/xfce4/*
+%else
+%{_sysconfdir}/xdg/Terminal/*
+%{_sysconfdir}/xdg/Thunar/*
+%{_sysconfdir}/xdg/autostart/*
+%{_sysconfdir}/xdg/xfce4/*
+%endif
 
 %files -n %{name}-Flash
 %defattr(-,root,root)
