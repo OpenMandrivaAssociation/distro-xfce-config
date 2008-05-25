@@ -1,9 +1,9 @@
-%define snap 20080511
+%define snap 20080525
 
 Summary: 	Mandriva Xfce configuration files
 Name:    	mandriva-xfce-config
 Version: 	2008.1
-Release: 	%mkrel 14
+Release: 	%mkrel 15
 Group:   	Graphical desktop/Xfce
 License: 	GPLv2+
 URL:		http://wiki.mandriva.com/en/Development/Ideas/XFCE
