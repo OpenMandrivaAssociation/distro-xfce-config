@@ -13,7 +13,8 @@ BuildArch: 	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
-Configuration files for Mandriva Xfce desktop environment.
+This package regroups all specific configuration files for Mandriva Xfce
+desktop environment.
 
 %package -n %{name}-common
 Summary: 	Mandriva Xfce common configuration files
@@ -24,7 +25,8 @@ Requires:       tango-icon-theme
 Requires:	mandriva-release-common
 
 %description -n %{name}-common
-Common configuration files for Mandriva Xfce desktop environment.
+This package regroups all common configuration files for Mandriva Xfce desktop
+environment.
 
 %package -n %{name}-Flash
 Summary: 	Mandriva Xfce Flash configuration files
@@ -41,7 +43,8 @@ Conflicts:	%{name}-Powerpack
 Provides:	%{name}
 
 %description -n %{name}-Flash
-Configuration files for Mandriva Flash Xfce desktop environment.
+This package regroups all specific  files for Mandriva Flash Xfce desktop
+environment.
 
 %package -n %{name}-Free
 Summary: 	Mandriva Xfce Free configuration files
@@ -58,7 +61,8 @@ Conflicts:	%{name}-Powerpack
 Provides:	%{name}
 
 %description -n %{name}-Free
-Configuration files for Mandriva Free Xfce desktop environment.
+This package regroups all specific  files for Mandriva Free Xfce desktop
+environment.
 
 %package -n %{name}-One
 Summary: 	Mandriva Xfce One configuration files
@@ -75,7 +79,8 @@ Conflicts:	%{name}-Powerpack
 Provides:	%{name}
 
 %description -n %{name}-One
-Configuration files for Mandriva One Xfce desktop environment.
+This package regroups all specific  files for Mandriva One Xfce desktop
+environment.
 
 %package -n %{name}-Powerpack
 Summary:	Mandriva Xfce Powerpack configuration files
@@ -92,7 +97,8 @@ Conflicts:	%{name}-One
 Provides:	%{name}
 
 %description -n %{name}-Powerpack
-Configuration files for Mandriva Powerpack Xfce desktop environment.
+This package regroups all specific  files for Mandriva Powerpack Xfce desktop
+environment.
 
 %prep
 %setup -qn %{name}-%{snap}
