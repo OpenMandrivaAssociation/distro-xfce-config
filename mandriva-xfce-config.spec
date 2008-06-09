@@ -2,8 +2,8 @@
 
 Summary: 	Mandriva Xfce configuration files
 Name:    	mandriva-xfce-config
-Version: 	2008.1
-Release: 	%mkrel 16
+Version: 	2009.0
+Release: 	%mkrel 1
 Group:   	Graphical desktop/Xfce
 License: 	GPLv2+
 URL:		http://wiki.mandriva.com/en/Development/Ideas/XFCE
