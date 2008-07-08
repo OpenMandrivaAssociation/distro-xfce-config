@@ -1,4 +1,4 @@
-%define snap 20080525
+%define snap 20080708
 
 Summary: 	Mandriva Xfce configuration files
 Name:    	mandriva-xfce-config
@@ -6,7 +6,7 @@ Version: 	2009.0
 Release: 	%mkrel 1
 Group:   	Graphical desktop/Xfce
 License: 	GPLv2+
-URL:		http://wiki.mandriva.com/en/Development/Ideas/XFCE
+URL:		http://wiki.mandriva.com/en/XfceLive
 # (tpg) http://svn.mandriva.com/svn/soft/mandriva-xfce-config/
 Source0: 	%{name}-%{snap}.tar.bz2
 BuildArch: 	noarch
