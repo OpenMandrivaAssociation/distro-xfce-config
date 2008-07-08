@@ -3,7 +3,7 @@
 Summary: 	Mandriva Xfce configuration files
 Name:    	mandriva-xfce-config
 Version: 	2009.0
-Release: 	%mkrel 2
+Release: 	%mkrel 3
 Group:   	Graphical desktop/Xfce
 License: 	GPLv2+
 URL:		http://wiki.mandriva.com/en/XfceLive
@@ -110,7 +110,7 @@ export sysconfdir=%{_sysconfdir}/X11/xdg
 %else
 export sysconfdir=%{_sysconfdir}/xdg
 %endif
-export localstatedir=%{_localstatedir}/lib
+export var=%{_var}/lib
 export iconsdir=%{_iconsdir}
 
 %makeinstall_std 
@@ -125,15 +125,15 @@ rm -rf %{buildroot}
 %clean_icon_cache Tango
 
 %pre -n %{name}-Flash
-if [ -d %{_localstatedir}/lib/mandriva/xfce-profiles/Flash ]; then
-  rm -rf %{_localstatedir}/lib/mandriva/xfce-profiles/Flash
+if [ -d %{_var}/lib/mandriva/xfce-profiles/Flash ]; then
+  rm -rf %{_var}/lib/mandriva/xfce-profiles/Flash
 fi
 
 %post -n %{name}-Flash
 %if %mdkversion < 200900
-update-alternatives --install %{_sysconfdir}/X11/xdg/xfce4/mcs_settings xfce-config %{_localstatedir}/lib/mandriva/xfce-profiles/Flash/xfce4/mcs_settings 10
+update-alternatives --install %{_sysconfdir}/X11/xdg/xfce4/mcs_settings xfce-config %{_var}/lib/mandriva/xfce-profiles/Flash/xfce4/mcs_settings 10
 %else
-update-alternatives --install %{_sysconfdir}/xdg/xfce4/mcs_settings xfce-config %{_localstatedir}/lib/mandriva/xfce-profiles/Flash/xfce4/mcs_settings 10
+update-alternatives --install %{_sysconfdir}/xdg/xfce4/mcs_settings xfce-config %{_var}/lib/mandriva/xfce-profiles/Flash/xfce4/mcs_settings 10
 %endif
 
 %postun -n %{name}-Flash
@@ -142,15 +142,15 @@ if ! [ -e /var/lib/mandriva/xfce-profiles/Flash ]; then
 fi
 
 %pre -n %{name}-Free
-if [ -d %{_localstatedir}/lib/mandriva/xfce-profiles/Free ]; then
-  rm -rf %{_localstatedir}/lib/mandriva/xfce-profiles/Free
+if [ -d %{_var}/lib/mandriva/xfce-profiles/Free ]; then
+  rm -rf %{_var}/lib/mandriva/xfce-profiles/Free
 fi
 
 %post -n %{name}-Free
 %if %mdkversion < 200900
-update-alternatives --install %{_sysconfdir}/X11/xdg/xfce4/mcs_settings xfce-config %{_localstatedir}/lib/mandriva/xfce-profiles/Free/xfce4/mcs_settings 10
+update-alternatives --install %{_sysconfdir}/X11/xdg/xfce4/mcs_settings xfce-config %{_var}/lib/mandriva/xfce-profiles/Free/xfce4/mcs_settings 10
 %else
-update-alternatives --install %{_sysconfdir}/xdg/xfce4/mcs_settings xfce-config %{_localstatedir}/lib/mandriva/xfce-profiles/Free/xfce4/mcs_settings 10
+update-alternatives --install %{_sysconfdir}/xdg/xfce4/mcs_settings xfce-config %{_var}/lib/mandriva/xfce-profiles/Free/xfce4/mcs_settings 10
 %endif
 
 %postun -n %{name}-Free
@@ -159,15 +159,15 @@ if ! [ -e /var/lib/mandriva/xfce-profiles/Free ]; then
 fi
 
 %pre -n %{name}-One
-if [ -d %{_localstatedir}/lib/mandriva/xfce-profiles/One ]; then
-  rm -rf %{_localstatedir}/lib/mandriva/xfce-profiles/One
+if [ -d %{_var}/lib/mandriva/xfce-profiles/One ]; then
+  rm -rf %{_var}/lib/mandriva/xfce-profiles/One
 fi
 
 %post -n %{name}-One
 %if %mdkversion < 200900
-update-alternatives --install %{_sysconfdir}/X11/xdg/xfce4/mcs_settings xfce-config %{_localstatedir}/lib/mandriva/xfce-profiles/One/xfce4/mcs_settings 10
+update-alternatives --install %{_sysconfdir}/X11/xdg/xfce4/mcs_settings xfce-config %{_var}/lib/mandriva/xfce-profiles/One/xfce4/mcs_settings 10
 %else
-update-alternatives --install %{_sysconfdir}/xdg/xfce4/mcs_settings xfce-config %{_localstatedir}/lib/mandriva/xfce-profiles/One/xfce4/mcs_settings 10
+update-alternatives --install %{_sysconfdir}/xdg/xfce4/mcs_settings xfce-config %{_var}/lib/mandriva/xfce-profiles/One/xfce4/mcs_settings 10
 %endif
 
 %postun -n %{name}-One
@@ -176,15 +176,15 @@ if ! [ -e /var/lib/mandriva/xfce-profiles/One ]; then
 fi
 
 %pre -n %{name}-Powerpack
-if [ -d %{_localstatedir}/lib/mandriva/xfce-profiles/Powerpack ]; then
-  rm -rf %{_localstatedir}/lib/mandriva/xfce-profiles/Powerpack
+if [ -d %{_var}/lib/mandriva/xfce-profiles/Powerpack ]; then
+  rm -rf %{_var}/lib/mandriva/xfce-profiles/Powerpack
 fi
 
 %post -n %{name}-Powerpack
 %if %mdkversion < 200900
-update-alternatives --install %{_sysconfdir}/X11/xdg/xfce4/mcs_settings xfce-config %{_localstatedir}/lib/mandriva/xfce-profiles/Powerpack/xfce4/mcs_settings 10
+update-alternatives --install %{_sysconfdir}/X11/xdg/xfce4/mcs_settings xfce-config %{_var}/lib/mandriva/xfce-profiles/Powerpack/xfce4/mcs_settings 10
 %else
-update-alternatives --install %{_sysconfdir}/xdg/xfce4/mcs_settings xfce-config %{_localstatedir}/lib/mandriva/xfce-profiles/Powerpack/xfce4/mcs_settings 10
+update-alternatives --install %{_sysconfdir}/xdg/xfce4/mcs_settings xfce-config %{_var}/lib/mandriva/xfce-profiles/Powerpack/xfce4/mcs_settings 10
 %endif
 
 %postun -n %{name}-Powerpack
@@ -209,16 +209,16 @@ fi
 
 %files -n %{name}-Flash
 %defattr(-,root,root)
-%{_localstatedir}/lib/mandriva/xfce-profiles/Flash
+%{_var}/lib/mandriva/xfce-profiles/Flash
 
 %files -n %{name}-Free
 %defattr(-,root,root)
-%{_localstatedir}/lib/mandriva/xfce-profiles/Free
+%{_var}/lib/mandriva/xfce-profiles/Free
 
 %files -n %{name}-One
 %defattr(-,root,root)
-%{_localstatedir}/lib/mandriva/xfce-profiles/One
+%{_var}/lib/mandriva/xfce-profiles/One
 
 %files -n %{name}-Powerpack
 %defattr(-,root,root)
-%{_localstatedir}/lib/mandriva/xfce-profiles/Powerpack
+%{_var}/lib/mandriva/xfce-profiles/Powerpack
