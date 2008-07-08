@@ -31,7 +31,7 @@ environment.
 %package -n %{name}-Flash
 Summary: 	Mandriva Xfce Flash configuration files
 Group: 		Graphical desktop/Xfce
-Url:		http://wiki.mandriva.com/en/Development/Ideas/XFCE
+Url:		http://wiki.mandriva.com/en/XfceLive
 # (tpg) mandriva stuff
 Requires:	mandriva-release-Flash
 Requires:	mandriva-theme-Flash
@@ -49,7 +49,7 @@ environment.
 %package -n %{name}-Free
 Summary: 	Mandriva Xfce Free configuration files
 Group: 		Graphical desktop/Xfce
-Url:		http://wiki.mandriva.com/en/Development/Ideas/XFCE
+Url:		http://wiki.mandriva.com/en/XfceLive
 # (tpg) mandriva stuff
 Requires:	mandriva-release-Free
 Requires:	mandriva-theme-Free
@@ -67,7 +67,7 @@ environment.
 %package -n %{name}-One
 Summary: 	Mandriva Xfce One configuration files
 Group: 		Graphical desktop/Xfce
-Url:		http://wiki.mandriva.com/en/Development/Ideas/XFCE
+Url:		http://wiki.mandriva.com/en/XfceLive
 # (tpg) mandriva stuff
 Requires:	mandriva-release-One
 Requires:	mandriva-theme-One
@@ -85,7 +85,7 @@ environment.
 %package -n %{name}-Powerpack
 Summary:	Mandriva Xfce Powerpack configuration files
 Group:		Graphical desktop/Xfce
-Url:		http://wiki.mandriva.com/en/Development/Ideas/XFCE
+Url:		http://wiki.mandriva.com/en/XfceLive
 # (tpg) mandriva stuff
 Requires:	mandriva-release-Powerpack
 Requires:	mandriva-theme-Powerpack
@@ -110,7 +110,7 @@ export sysconfdir=%{_sysconfdir}/X11/xdg
 %else
 export sysconfdir=%{_sysconfdir}/xdg
 %endif
-export var=%{_var}/lib
+export localstatedir=%{_var}/lib
 export iconsdir=%{_iconsdir}
 
 %makeinstall_std 
