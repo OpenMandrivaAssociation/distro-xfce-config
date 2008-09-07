@@ -1,9 +1,9 @@
-%define snap 20080905
+%define snap 20080907
 
 Summary: 	Mandriva Xfce configuration files
 Name:    	mandriva-xfce-config
 Version: 	2009.0
-Release: 	%mkrel 4
+Release: 	%mkrel 5
 Group:   	Graphical desktop/Xfce
 License: 	GPLv2+
 URL:		http://wiki.mandriva.com/en/XfceLive
@@ -23,6 +23,9 @@ Requires(pre):	update-alternatives
 Requires:	ia_ora-xfce
 Requires:       tango-icon-theme
 Requires:	mandriva-release-common
+%if %mdkversion > 2008100
+Conflicts:	xfce-utils <= 4.4.2-22
+%endif
 
 %description -n %{name}-common
 This package regroups all common configuration files for Mandriva Xfce desktop
