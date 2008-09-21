@@ -1,4 +1,4 @@
-%define snap 20080907
+%define snap 20080921
 
 Summary: 	Mandriva Xfce configuration files
 Name:    	mandriva-xfce-config
