@@ -1,4 +1,4 @@
-%define snap 20080921
+%define snap 20080922
 
 Summary: 	Mandriva Xfce configuration files
 Name:    	mandriva-xfce-config
@@ -115,6 +115,7 @@ export sysconfdir=%{_sysconfdir}/xdg
 %endif
 export localstatedir=%{_var}/lib
 export iconsdir=%{_iconsdir}
+export prefix=%{_prefix}
 
 %makeinstall_std 
 
@@ -208,6 +209,7 @@ fi
 %{_sysconfdir}/xdg/Thunar/*
 %{_sysconfdir}/xdg/autostart/*
 %{_sysconfdir}/xdg/xfce4/*
+%{_bindir}/xfce4-update-config
 %endif
 
 %files -n %{name}-Flash
