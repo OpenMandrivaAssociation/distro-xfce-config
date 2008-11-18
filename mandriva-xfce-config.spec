@@ -1,9 +1,9 @@
-%define snap 20080922
+%define snap 20081118
 
 Summary: 	Mandriva Xfce configuration files
 Name:    	mandriva-xfce-config
-Version: 	2009.0
-Release: 	%mkrel 7
+Version: 	2009.1
+Release: 	%mkrel 0.1
 Group:   	Graphical desktop/Xfce
 License: 	GPLv2+
 URL:		http://wiki.mandriva.com/en/XfceLive
@@ -108,11 +108,7 @@ environment.
 
 %install
 rm -rf %{buildroot}
-%if %mdkversion < 200900
-export sysconfdir=%{_sysconfdir}/X11/xdg
-%else
 export sysconfdir=%{_sysconfdir}/xdg
-%endif
 export localstatedir=%{_var}/lib
 export iconsdir=%{_iconsdir}
 export prefix=%{_prefix}
@@ -134,15 +130,11 @@ if [ -d %{_var}/lib/mandriva/xfce-profiles/Flash ]; then
 fi
 
 %post -n %{name}-Flash
-%if %mdkversion < 200900
-update-alternatives --install %{_sysconfdir}/X11/xdg/xfce4/mcs_settings xfce-config %{_var}/lib/mandriva/xfce-profiles/Flash/xfce4/mcs_settings 10
-%else
-update-alternatives --install %{_sysconfdir}/xdg/xfce4/mcs_settings xfce-config %{_var}/lib/mandriva/xfce-profiles/Flash/xfce4/mcs_settings 10
-%endif
+update-alternatives --install %{_sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml xfce-config %{_var}/lib/mandriva/xfce-profiles/Flash/xfce4/xfconf/xfce-perchannel-xml 10
 
 %postun -n %{name}-Flash
 if ! [ -e /var/lib/mandriva/xfce-profiles/Flash ]; then
-  update-alternatives --remove xfce-config /var/lib/mandriva/xfce-profiles/Flash/xfce4/mcs_settings
+  update-alternatives --remove xfce-config /var/lib/mandriva/xfce-profiles/Flash/xfce4/xfconf/xfce-perchannel-xml
 fi
 
 %pre -n %{name}-Free
@@ -151,15 +143,11 @@ if [ -d %{_var}/lib/mandriva/xfce-profiles/Free ]; then
 fi
 
 %post -n %{name}-Free
-%if %mdkversion < 200900
-update-alternatives --install %{_sysconfdir}/X11/xdg/xfce4/mcs_settings xfce-config %{_var}/lib/mandriva/xfce-profiles/Free/xfce4/mcs_settings 10
-%else
-update-alternatives --install %{_sysconfdir}/xdg/xfce4/mcs_settings xfce-config %{_var}/lib/mandriva/xfce-profiles/Free/xfce4/mcs_settings 10
-%endif
+update-alternatives --install %{_sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml xfce-config %{_var}/lib/mandriva/xfce-profiles/Free/xfce4/xfconf/xfce-perchannel-xml 10
 
 %postun -n %{name}-Free
 if ! [ -e /var/lib/mandriva/xfce-profiles/Free ]; then
-  update-alternatives --remove xfce-config /var/lib/mandriva/xfce-profiles/Free/xfce4/mcs_settings
+  update-alternatives --remove xfce-config /var/lib/mandriva/xfce-profiles/Free/xfce4/xfconf/xfce-perchannel-xml
 fi
 
 %pre -n %{name}-One
@@ -168,15 +156,11 @@ if [ -d %{_var}/lib/mandriva/xfce-profiles/One ]; then
 fi
 
 %post -n %{name}-One
-%if %mdkversion < 200900
-update-alternatives --install %{_sysconfdir}/X11/xdg/xfce4/mcs_settings xfce-config %{_var}/lib/mandriva/xfce-profiles/One/xfce4/mcs_settings 10
-%else
-update-alternatives --install %{_sysconfdir}/xdg/xfce4/mcs_settings xfce-config %{_var}/lib/mandriva/xfce-profiles/One/xfce4/mcs_settings 10
-%endif
+update-alternatives --install %{_sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml xfce-config %{_var}/lib/mandriva/xfce-profiles/One/xfce4/xfconf/xfce-perchannel-xml 10
 
 %postun -n %{name}-One
 if ! [ -e /var/lib/mandriva/xfce-profiles/One ]; then
-  update-alternatives --remove xfce-config /var/lib/mandriva/xfce-profiles/One/xfce4/mcs_settings
+  update-alternatives --remove xfce-config /var/lib/mandriva/xfce-profiles/One/xfce4/xfconf/xfce-perchannel-xml
 fi
 
 %pre -n %{name}-Powerpack
@@ -185,32 +169,21 @@ if [ -d %{_var}/lib/mandriva/xfce-profiles/Powerpack ]; then
 fi
 
 %post -n %{name}-Powerpack
-%if %mdkversion < 200900
-update-alternatives --install %{_sysconfdir}/X11/xdg/xfce4/mcs_settings xfce-config %{_var}/lib/mandriva/xfce-profiles/Powerpack/xfce4/mcs_settings 10
-%else
-update-alternatives --install %{_sysconfdir}/xdg/xfce4/mcs_settings xfce-config %{_var}/lib/mandriva/xfce-profiles/Powerpack/xfce4/mcs_settings 10
-%endif
+update-alternatives --install %{_sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml xfce-config %{_var}/lib/mandriva/xfce-profiles/Powerpack/xfce4/xfconf/xfce-perchannel-xml 10
 
 %postun -n %{name}-Powerpack
 if ! [ -e /var/lib/mandriva/xfce-profiles/Powerpack ]; then
-  update-alternatives --remove xfce-config /var/lib/mandriva/xfce-profiles/Powerpack/xfce4/mcs_settings
+  update-alternatives --remove xfce-config /var/lib/mandriva/xfce-profiles/Powerpack/xfce4/xfconf/xfce-perchannel-xml
 fi
 
 %files -n %{name}-common
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog README.update.urpmi
-%if %mdkversion < 200900
-%{_sysconfdir}/X11/xdg/Terminal/*
-%{_sysconfdir}/X11/xdg/Thunar/*
-%{_sysconfdir}/X11/xdg/autostart/*
-%{_sysconfdir}/X11/xdg/xfce4/*
-%else
 %{_sysconfdir}/xdg/Terminal/*
 %{_sysconfdir}/xdg/Thunar/*
 %{_sysconfdir}/xdg/autostart/*
 %{_sysconfdir}/xdg/xfce4/*
 %{_bindir}/xfce4-update-config
-%endif
 
 %files -n %{name}-Flash
 %defattr(-,root,root)
