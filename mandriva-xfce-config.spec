@@ -3,12 +3,13 @@
 Summary: 	Mandriva Xfce configuration files
 Name:    	mandriva-xfce-config
 Version: 	2009.1
-Release: 	%mkrel 0.1
+Release: 	%mkrel 0.3
 Group:   	Graphical desktop/Xfce
 License: 	GPLv2+
 URL:		http://wiki.mandriva.com/en/XfceLive
 # (tpg) http://svn.mandriva.com/svn/soft/mandriva-xfce-config/
 Source0: 	%{name}-%{snap}.tar.bz2
+Obsoletes:	xfce-config
 BuildArch: 	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
@@ -23,6 +24,8 @@ Requires(pre):	update-alternatives
 Requires:	ia_ora-xfce
 Requires:       tango-icon-theme
 Requires:	mandriva-release-common
+Requires(pre):	xfconf
+Requires(preun): xfconf
 %if %mdkversion > 2008100
 Conflicts:	xfce-utils <= 4.4.2-22
 %endif
