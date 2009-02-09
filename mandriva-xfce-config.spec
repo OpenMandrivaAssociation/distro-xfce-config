@@ -191,7 +191,7 @@ fi
 %{_sysconfdir}/xdg/Thunar/*
 %{_sysconfdir}/xdg/autostart/*
 %{_sysconfdir}/xdg/xfce4/*
-%{_bindir}/xfce4-update-config
+%{_bindir}/xfce4-firstrun
 
 %files -n %{name}-Flash
 %defattr(-,root,root)
