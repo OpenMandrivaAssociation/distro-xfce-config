@@ -1,9 +1,9 @@
-%define snap 20090217
+%define snap 20090312
 
 Summary: 	Mandriva Xfce configuration files
 Name:    	mandriva-xfce-config
 Version: 	2009.1
-Release: 	%mkrel 1
+Release: 	%mkrel 2
 Group:   	Graphical desktop/Xfce
 License: 	GPLv2+
 URL:		http://wiki.mandriva.com/en/XfceLive
@@ -28,6 +28,7 @@ Requires(pre):	xfconf
 Requires(preun): xfconf
 %if %mdkversion > 2008100
 Conflicts:	xfce-utils <= 4.4.2-22
+Conflicts:	xfce4-power-manager < 0.6.4-3
 %endif
 
 %description -n %{name}-common
