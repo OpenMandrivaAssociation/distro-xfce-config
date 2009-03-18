@@ -1,9 +1,9 @@
-%define snap 20090312
+%define snap 20090318
 
 Summary: 	Mandriva Xfce configuration files
 Name:    	mandriva-xfce-config
 Version: 	2009.1
-Release: 	%mkrel 3
+Release: 	%mkrel 4
 Group:   	Graphical desktop/Xfce
 License: 	GPLv2+
 URL:		http://wiki.mandriva.com/en/XfceLive
@@ -29,6 +29,7 @@ Requires(preun): xfconf
 %if %mdkversion > 2008100
 Conflicts:	xfce-utils <= 4.4.2-22
 Conflicts:	xfce4-power-manager < 0.6.4-3
+Conflicts:	xfdesktop < 4.6.0-4
 %endif
 
 %description -n %{name}-common
@@ -192,6 +193,7 @@ fi
 %{_sysconfdir}/xdg/Thunar/*
 %{_sysconfdir}/xdg/autostart/*
 %{_sysconfdir}/xdg/xfce4/*
+%{_sysconfdir}/xdg/menus/xfce-applications.menu
 %{_bindir}/xfce4-firstrun
 
 %files -n %{name}-Flash
