@@ -1,9 +1,9 @@
-%define snap 20100604
+%define snap 20110730
 
 Summary: 	Mandriva Xfce configuration files
 Name:    	mandriva-xfce-config
-Version: 	2010.1
-Release: 	%mkrel 4
+Version: 	2011.0
+Release: 	%mkrel 1
 Group:   	Graphical desktop/Xfce
 License: 	GPLv2+
 URL:		http://wiki.mandriva.com/en/XfceLive
@@ -22,11 +22,12 @@ Summary: 	Mandriva Xfce common configuration files
 Group: 		Graphical desktop/Xfce
 Requires(pre):	update-alternatives
 Requires:	ia_ora-xfce
-Requires:       tango-icon-theme
+Requires:       elementary-icons
 Requires:	mandriva-release-common
 Requires(pre):	xfconf
 Requires(preun): xfconf
-#Requires:	xfce4-places-plugin
+Requires:	xfce4-weather-plugin
+Requires:	xfce4-cpugraph-plugin
 Requires:	dynamic
 %if %mdkversion > 2008100
 Conflicts:	xfce-utils <= 4.4.2-22
@@ -195,7 +196,6 @@ fi
 %{_sysconfdir}/xdg/Thunar/*
 %{_sysconfdir}/xdg/autostart/*
 %{_sysconfdir}/xdg/xfce4/*
-%{_sysconfdir}/xdg/menus/xfce-applications.menu
 %{_bindir}/xfce4-firstrun
 
 %files -n %{name}-Flash
