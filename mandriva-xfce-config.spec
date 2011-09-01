@@ -1,9 +1,9 @@
-%define snap 20110730
+%define snap 20110901
 
 Summary: 	Mandriva Xfce configuration files
 Name:    	mandriva-xfce-config
 Version: 	2011.0
-Release: 	%mkrel 5
+Release: 	%mkrel 6
 Group:   	Graphical desktop/Xfce
 License: 	GPLv2+
 URL:		http://wiki.mandriva.com/en/XfceLive
