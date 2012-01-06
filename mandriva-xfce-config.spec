@@ -1,16 +1,16 @@
-%define snap 20110901
+%define snap 20120106
 
-Summary: 	Mandriva Xfce configuration files
-Name:    	mandriva-xfce-config
-Version: 	2011.0
-Release: 	%mkrel 6
-Group:   	Graphical desktop/Xfce
-License: 	GPLv2+
+Summary:	Mandriva Xfce configuration files
+Name:		mandriva-xfce-config
+Version:	2011.0
+Release:	%mkrel 7
+Group:		Graphical desktop/Xfce
+License:	GPLv2+
 URL:		http://wiki.mandriva.com/en/XfceLive
 # (tpg) http://svn.mandriva.com/svn/soft/mandriva-xfce-config/
-Source0: 	%{name}-%{snap}.tar.bz2
+Source0:	%{name}-%{snap}.tar.bz2
 Obsoletes:	xfce-config
-BuildArch: 	noarch
+BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -18,14 +18,14 @@ This package regroups all specific configuration files for Mandriva Xfce
 desktop environment.
 
 %package -n %{name}-common
-Summary: 	Mandriva Xfce common configuration files
-Group: 		Graphical desktop/Xfce
+Summary:	Mandriva Xfce common configuration files
+Group:		Graphical desktop/Xfce
 Requires(pre):	update-alternatives
 Requires:	ia_ora-xfce
-Requires:       elementary-icons
+Requires:	elementary-icons
 Requires:	mandriva-release-common
 Requires(pre):	xfconf
-Requires(preun): xfconf
+Requires(preun):	xfconf
 Requires:	xfce4-weather-plugin
 Requires:	xfce4-cpugraph-plugin
 Requires:	dynamic
@@ -40,14 +40,14 @@ This package regroups all common configuration files for Mandriva Xfce desktop
 environment.
 
 %package -n %{name}-Flash
-Summary: 	Mandriva Xfce Flash configuration files
-Group: 		Graphical desktop/Xfce
+Summary:	Mandriva Xfce Flash configuration files
+Group:		Graphical desktop/Xfce
 Url:		http://wiki.mandriva.com/en/XfceLive
 # (tpg) mandriva stuff
 Requires:	mandriva-release-Flash
 Requires:	mandriva-theme-Flash
 Requires(pre):	%{name}-common = %{version}-%{release}
-Requires(preun): %{name}-common = %{version}-%{release}
+Requires(preun):	%{name}-common = %{version}-%{release}
 Conflicts:	%{name}-Free
 Conflicts:	%{name}-One
 Conflicts:	%{name}-Powerpack
@@ -58,14 +58,14 @@ This package regroups all specific  files for Mandriva Flash Xfce desktop
 environment.
 
 %package -n %{name}-Free
-Summary: 	Mandriva Xfce Free configuration files
-Group: 		Graphical desktop/Xfce
+Summary:	Mandriva Xfce Free configuration files
+Group:		Graphical desktop/Xfce
 Url:		http://wiki.mandriva.com/en/XfceLive
 # (tpg) mandriva stuff
 Requires:	mandriva-release-Free
 Requires:	mandriva-theme-Free
 Requires(pre):	%{name}-common = %{version}-%{release}
-Requires(preun): %{name}-common = %{version}-%{release}
+Requires(preun):	%{name}-common = %{version}-%{release}
 Conflicts:	%{name}-Flash
 Conflicts:	%{name}-One
 Conflicts:	%{name}-Powerpack
@@ -76,14 +76,14 @@ This package regroups all specific  files for Mandriva Free Xfce desktop
 environment.
 
 %package -n %{name}-One
-Summary: 	Mandriva Xfce One configuration files
-Group: 		Graphical desktop/Xfce
+Summary:	Mandriva Xfce One configuration files
+Group:		Graphical desktop/Xfce
 Url:		http://wiki.mandriva.com/en/XfceLive
 # (tpg) mandriva stuff
 Requires:	mandriva-release-One
 Requires:	mandriva-theme-One
 Requires(pre):	%{name}-common = %{version}-%{release}
-Requires(preun): %{name}-common = %{version}-%{release}
+Requires(preun):	%{name}-common = %{version}-%{release}
 Conflicts:	%{name}-Flash
 Conflicts:	%{name}-Free
 Conflicts:	%{name}-Powerpack
@@ -101,7 +101,7 @@ Url:		http://wiki.mandriva.com/en/XfceLive
 Requires:	mandriva-release-Powerpack
 Requires:	mandriva-theme-Powerpack
 Requires(pre):	%{name}-common = %{version}-%{release}
-Requires(preun): %{name}-common = %{version}-%{release}
+Requires(preun):	%{name}-common = %{version}-%{release}
 Conflicts:	%{name}-Flash
 Conflicts:	%{name}-Free
 Conflicts:	%{name}-One
