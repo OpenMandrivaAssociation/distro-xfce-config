@@ -11,7 +11,6 @@ URL:		http://wiki.mandriva.com/en/XfceLive
 Source0:	%{name}-%{snap}.tar.bz2
 Obsoletes:	xfce-config
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This package regroups all specific configuration files for Mandriva Xfce
@@ -115,7 +114,6 @@ environment.
 %setup -qn %{name}-%{snap}
 
 %install
-rm -rf %{buildroot}
 export sysconfdir=%{_sysconfdir}/xdg
 export localstatedir=%{_var}/lib
 export iconsdir=%{_iconsdir}
@@ -123,8 +121,6 @@ export prefix=%{_prefix}
 
 %makeinstall_std
 
-%clean
-rm -rf %{buildroot}
 
 %post -n %{name}-common
 %update_icon_cache Tango
