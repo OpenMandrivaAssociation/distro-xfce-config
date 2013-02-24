@@ -3,7 +3,7 @@
 Summary:	Mandriva Xfce configuration files
 Name:		mandriva-xfce-config
 Version:	2013.0
-Release:	5
+Release:	6
 Group:		Graphical desktop/Xfce
 License:	GPLv2+
 URL:		http://wiki.mandriva.com/en/XfceLive
@@ -32,12 +32,6 @@ Requires:	dynamic
 Conflicts:	xfce-utils <= 4.4.2-22
 Conflicts:	xfce4-power-manager < 0.6.4-3
 Conflicts:	xfdesktop < 4.6.0-4
-%endif
-%if %mdvver = 201300
-Conflicts:	xfce4-session-4.10.0-3
-Conflicts:	exo-0.10.2-1
-Conflicts:	xfce4-settings-4.10.0-3
-Conflicts:	libxfce4ui-common-4.10.0-2
 %endif
 
 %description -n %{name}-common
@@ -191,7 +185,6 @@ if ! [ -e %{_var}/lib/mandriva/xfce-profiles/Powerpack ]; then
 fi
 
 %files -n %{name}-common
-%defattr(-,root,root)
 %doc AUTHORS ChangeLog README.update.urpmi
 %dir %{_var}/lib/mandriva/xfce-profiles
 %{_sysconfdir}/xdg/Terminal/*
@@ -201,19 +194,15 @@ fi
 %{_bindir}/xfce4-firstrun
 
 %files -n %{name}-Flash
-%defattr(-,root,root)
 %{_var}/lib/mandriva/xfce-profiles/Flash
 
 %files -n %{name}-Free
-%defattr(-,root,root)
 %{_var}/lib/mandriva/xfce-profiles/Free
 
 %files -n %{name}-One
-%defattr(-,root,root)
 %{_var}/lib/mandriva/xfce-profiles/One
 
 %files -n %{name}-Powerpack
-%defattr(-,root,root)
 %{_var}/lib/mandriva/xfce-profiles/Powerpack
 
 
