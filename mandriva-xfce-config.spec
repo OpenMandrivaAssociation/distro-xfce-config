@@ -3,7 +3,7 @@
 Summary:	Mandriva Xfce configuration files
 Name:		mandriva-xfce-config
 Version:	2013.0
-Release:	9
+Release:	10
 Group:		Graphical desktop/Xfce
 License:	GPLv2+
 URL:		http://wiki.mandriva.com/en/XfceLive
