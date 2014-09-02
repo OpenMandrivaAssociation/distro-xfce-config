@@ -2,13 +2,13 @@
 
 Summary:	%{distribution} Xfce configuration files
 Name:		distro-xfce-config
-Version:	%distro_release
+Version:	2015.0
 Release:	1
 Group:		Graphical desktop/Xfce
 License:	GPLv2+
-URL:		http://wiki.mandriva.com/en/XfceLive
+URL:		http://www.openmandriva.org
 # (tpg) http://svn.mandriva.com/svn/soft/mandriva-xfce-config/
-Source0:	%{name}-%{snap}.tar.bz2
+Source0:	%{name}-%{snap}.tar.xz
 Obsoletes:	xfce-config
 BuildArch:	noarch
 
@@ -39,76 +39,18 @@ Conflicts:	xfdesktop < 4.6.0-4
 This package regroups all common configuration files for Mandriva Xfce desktop
 environment.
 
-%package -n %{name}-Flash
-Summary:	Mandriva Xfce Flash configuration files
+%package -n %{name}-OpenMandriva
+Summary:	%distribution Xfce Flash configuration files
 Group:		Graphical desktop/Xfce
-Url:		http://wiki.mandriva.com/en/XfceLive
+Url:		http://www.openmandriva.org
 # (tpg) mandriva stuff
-Requires:	mandriva-release-Flash
-Requires:	mandriva-theme-Flash
+Requires:	distro-release-OpenMandriva
+Requires:	mandriva-theme-OpenMandriva
 Requires(pre):	%{name}-common = %{version}-%{release}
 Requires(preun):	%{name}-common = %{version}-%{release}
-Conflicts:	%{name}-Free
-Conflicts:	%{name}-One
-Conflicts:	%{name}-Powerpack
-Provides:	%{name}
 
-%description -n %{name}-Flash
-This package regroups all specific  files for Mandriva Flash Xfce desktop
-environment.
-
-%package -n %{name}-Free
-Summary:	Mandriva Xfce Free configuration files
-Group:		Graphical desktop/Xfce
-Url:		http://wiki.mandriva.com/en/XfceLive
-# (tpg) mandriva stuff
-Requires:	mandriva-release-Free
-Requires:	mandriva-theme-Free
-Requires(pre):	%{name}-common = %{version}-%{release}
-Requires(preun):	%{name}-common = %{version}-%{release}
-Conflicts:	%{name}-Flash
-Conflicts:	%{name}-One
-Conflicts:	%{name}-Powerpack
-Provides:	%{name}
-
-%description -n %{name}-Free
-This package regroups all specific  files for Mandriva Free Xfce desktop
-environment.
-
-%package -n %{name}-One
-Summary:	Mandriva Xfce One configuration files
-Group:		Graphical desktop/Xfce
-Url:		http://wiki.mandriva.com/en/XfceLive
-# (tpg) mandriva stuff
-Requires:	mandriva-release-One
-Requires:	mandriva-theme-One
-Requires(pre):	%{name}-common = %{version}-%{release}
-Requires(preun):	%{name}-common = %{version}-%{release}
-Conflicts:	%{name}-Flash
-Conflicts:	%{name}-Free
-Conflicts:	%{name}-Powerpack
-Provides:	%{name}
-
-%description -n %{name}-One
-This package regroups all specific  files for Mandriva One Xfce desktop
-environment.
-
-%package -n %{name}-Powerpack
-Summary:	Mandriva Xfce Powerpack configuration files
-Group:		Graphical desktop/Xfce
-Url:		http://wiki.mandriva.com/en/XfceLive
-# (tpg) mandriva stuff
-Requires:	mandriva-release-Powerpack
-Requires:	mandriva-theme-Powerpack
-Requires(pre):	%{name}-common = %{version}-%{release}
-Requires(preun):	%{name}-common = %{version}-%{release}
-Conflicts:	%{name}-Flash
-Conflicts:	%{name}-Free
-Conflicts:	%{name}-One
-Provides:	%{name}
-
-%description -n %{name}-Powerpack
-This package regroups all specific  files for Mandriva Powerpack Xfce desktop
+%description -n %{name}-OpenMandriva
+This package regroups all specific  files for %{distribution} Xfce desktop
 environment.
 
 %prep
@@ -123,66 +65,18 @@ export prefix=%{_prefix}
 %makeinstall_std
 
 
-%post -n %{name}-common
-%update_icon_cache Tango
-
-%postun -n %{name}-common
-%clean_icon_cache Tango
-
-%pre -n %{name}-Flash
+%pre -n %{name}-OpenMandriva
 if [ -d %{_var}/lib/mandriva/xfce-profiles/Flash ]; then
   rm -rf %{_var}/lib/mandriva/xfce-profiles/Flash
   update-alternatives --remove-all xfce-config
 fi
 
-%post -n %{name}-Flash
-update-alternatives --install %{_sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml xfce-config %{_var}/lib/mandriva/xfce-profiles/Flash/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml 10
+%post -n %{name}-OpenMandriva
+update-alternatives --install %{_sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml xfce-config %{_var}/lib/mandriva/xfce-profiles/OpenMandriva/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml 10
 
-%postun -n %{name}-Flash
-if ! [ -e %{_var}/lib/mandriva/xfce-profiles/Flash ]; then
-  update-alternatives --remove xfce-config %{_var}/lib/mandriva/xfce-profiles/Flash/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
-fi
-
-%pre -n %{name}-Free
-if [ -d %{_var}/lib/mandriva/xfce-profiles/Free ]; then
-  rm -rf %{_var}/lib/mandriva/xfce-profiles/Free
-  update-alternatives --remove-all xfce-config
-fi
-
-%post -n %{name}-Free
-update-alternatives --install %{_sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml xfce-config %{_var}/lib/mandriva/xfce-profiles/Free/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml 10
-
-%postun -n %{name}-Free
-if ! [ -e %{_var}/lib/mandriva/xfce-profiles/Free ]; then
-  update-alternatives --remove xfce-config %{_var}/lib/mandriva/xfce-profiles/Free/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
-fi
-
-%pre -n %{name}-One
-if [ -d %{_var}/lib/mandriva/xfce-profiles/One ]; then
-  rm -rf %{_var}/lib/mandriva/xfce-profiles/One
-  update-alternatives --remove-all xfce-config
-fi
-
-%post -n %{name}-One
-update-alternatives --install %{_sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml xfce-config %{_var}/lib/mandriva/xfce-profiles/One/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml 10
-
-%postun -n %{name}-One
-if ! [ -e %{_var}/lib/mandriva/xfce-profiles/One ]; then
-  update-alternatives --remove xfce-config %{_var}/lib/mandriva/xfce-profiles/One/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
-fi
-
-%pre -n %{name}-Powerpack
-if [ -d %{_var}/lib/mandriva/xfce-profiles/Powerpack ]; then
-  rm -rf %{_var}/lib/mandriva/xfce-profiles/Powerpack
-  update-alternatives --remove-all xfce-config
-fi
-
-%post -n %{name}-Powerpack
-update-alternatives --install %{_sysconfdir}/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml xfce-config %{_var}/lib/mandriva/xfce-profiles/Powerpack/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml 10
-
-%postun -n %{name}-Powerpack
-if ! [ -e %{_var}/lib/mandriva/xfce-profiles/Powerpack ]; then
-  update-alternatives --remove xfce-config %{_var}/lib/mandriva/xfce-profiles/Powerpack/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+%postun -n %{name}-OpenMandriva
+if ! [ -e %{_var}/lib/mandriva/xfce-profiles/OpenMandriva ]; then
+  update-alternatives --remove xfce-config %{_var}/lib/mandriva/xfce-profiles/OpenMandriva/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
 fi
 
 %files -n %{name}-common
@@ -194,15 +88,5 @@ fi
 %{_sysconfdir}/xdg/xfce4/*
 %{_bindir}/xfce4-firstrun
 
-%files -n %{name}-Flash
-%{_var}/lib/mandriva/xfce-profiles/Flash
-
-%files -n %{name}-Free
-%{_var}/lib/mandriva/xfce-profiles/Free
-
-%files -n %{name}-One
-%{_var}/lib/mandriva/xfce-profiles/One
-
-%files -n %{name}-Powerpack
-%{_var}/lib/mandriva/xfce-profiles/Powerpack
-
+%files -n %{name}-OpenMandriva
+%{_var}/lib/mandriva/xfce-profiles/OpenMandriva
