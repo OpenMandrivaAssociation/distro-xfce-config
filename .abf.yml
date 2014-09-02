@@ -1,3 +1,4 @@
-sources:
+removed_sources:
   distro-xfce-config-20120314.tar.xz: f1e1e3d3130b275c2e794529469da70c49b6425f
-  mandriva-xfce-config-20120314.tar.bz2: d5aa99867bab9c9dafd3c3beccd1a60b00b1116d
+sources:
+  distro-xfce-config-20140903.tar.xz: c408e927a7988a4b39f0ad4b9a4bcf00675124b7

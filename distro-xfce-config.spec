@@ -1,4 +1,4 @@
-%define snap 20120314
+%define snap 20140903
 
 Summary:	%{distribution} Xfce configuration files
 Name:		distro-xfce-config
@@ -6,14 +6,14 @@ Version:	2015.0
 Release:	1
 Group:		Graphical desktop/Xfce
 License:	GPLv2+
-URL:		http://www.openmandriva.org
+URL:		https://abf.io/omv_software/distro-xfce-config
 # (tpg) http://svn.mandriva.com/svn/soft/mandriva-xfce-config/
-Source0:	%{name}-%{snap}.tar.xz
+Source0:	https://abf.io/omv_software/distro-xfce-config/%{name}-%{snap}.tar.xz
 Obsoletes:	xfce-config
 BuildArch:	noarch
 
 %description
-This package regroups all specific configuration files for Mandriva Xfce
+This package regroups all specific configuration files for %{distribution} Xfce
 desktop environment.
 
 %package -n %{name}-common
@@ -36,13 +36,13 @@ Conflicts:	xfdesktop < 4.6.0-4
 %endif
 
 %description -n %{name}-common
-This package regroups all common configuration files for Mandriva Xfce desktop
+This package regroups all common configuration files for %{distribution} Xfce desktop
 environment.
 
 %package -n %{name}-OpenMandriva
 Summary:	%distribution Xfce Flash configuration files
 Group:		Graphical desktop/Xfce
-Url:		http://www.openmandriva.org
+Url:		https://abf.io/omv_software/distro-xfce-config
 # (tpg) mandriva stuff
 Requires:	distro-release-OpenMandriva
 Requires:	mandriva-theme-OpenMandriva
