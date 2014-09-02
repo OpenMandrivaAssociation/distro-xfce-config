@@ -13,8 +13,8 @@ Obsoletes:	xfce-config
 BuildArch:	noarch
 
 %description
-This package regroups all specific configuration files for %{distribution} Xfce
-desktop environment.
+This package regroups all specific configuration
+files for %{distribution} Xfce desktop environment.
 
 %package -n %{name}-common
 Summary:	%{distribution} Xfce common configuration files
@@ -36,8 +36,8 @@ Conflicts:	xfdesktop < 4.6.0-4
 %endif
 
 %description -n %{name}-common
-This package regroups all common configuration files for %{distribution} Xfce desktop
-environment.
+This package regroups all common configuration files
+for %{distribution} Xfce desktop environment.
 
 %package -n %{name}-OpenMandriva
 Summary:	%distribution Xfce Flash configuration files
@@ -50,8 +50,8 @@ Requires(pre):	%{name}-common = %{version}-%{release}
 Requires(preun):	%{name}-common = %{version}-%{release}
 
 %description -n %{name}-OpenMandriva
-This package regroups all specific  files for %{distribution} Xfce desktop
-environment.
+This package regroups all specific  files
+for %{distribution} Xfce desktop environment.
 
 %prep
 %setup -qn %{name}-%{snap}
