@@ -3,13 +3,14 @@
 Summary:	%{distribution} Xfce configuration files
 Name:		distro-xfce-config
 Version:	2015.0
-Release:	1
+Release:	2
 Group:		Graphical desktop/Xfce
 License:	GPLv2+
 URL:		https://abf.io/omv_software/distro-xfce-config
 # (tpg) http://svn.mandriva.com/svn/soft/mandriva-xfce-config/
 Source0:	https://abf.io/omv_software/distro-xfce-config/%{name}-%{snap}.tar.xz
 Obsoletes:	xfce-config
+%rename	mandriva-xfce-config
 BuildArch:	noarch
 
 %description
@@ -23,6 +24,7 @@ Requires(pre):	update-alternatives
 Requires:	ia_ora-xfce
 Requires:	elementary-icons
 Requires:	distro-release-common
+%rename		mandriva-xfce-config-common
 
 Requires(pre):	xfconf
 Requires(preun):	xfconf
