@@ -1,13 +1,12 @@
 %define snap 20140903
 
-Summary:	%{distribution} Xfce configuration files
+Summary:	%{distribution} xfce configuration files
 Name:		distro-xfce-config
 Version:	2014.0
-Release:	1
+Release:	2
 Group:		Graphical desktop/Xfce
 License:	GPLv2+
 URL:		https://abf.io/omv_software/distro-xfce-config
-# (tpg) http://svn.mandriva.com/svn/soft/mandriva-xfce-config/
 Source0:	https://abf.io/omv_software/distro-xfce-config/%{name}-%{snap}.tar.xz
 Obsoletes:	xfce-config
 %rename	mandriva-xfce-config
@@ -15,10 +14,10 @@ BuildArch:	noarch
 
 %description
 This package regroups all specific configuration
-files for %{distribution} Xfce desktop environment.
+files for %{distribution} xfce desktop environment.
 
 %package -n %{name}-common
-Summary:	%{distribution} Xfce common configuration files
+Summary:	%{distribution} xfce common configuration files
 Group:		Graphical desktop/Xfce
 Requires(pre):	update-alternatives
 Requires:	ia_ora-xfce
@@ -39,21 +38,25 @@ Conflicts:	xfdesktop < 4.6.0-4
 
 %description -n %{name}-common
 This package regroups all common configuration files
-for %{distribution} Xfce desktop environment.
+for %{distribution} xfce desktop environment.
 
 %package -n %{name}-OpenMandriva
-Summary:	%distribution Xfce Flash configuration files
+Summary:	%distribution xfce configuration files
 Group:		Graphical desktop/Xfce
 Url:		https://abf.io/omv_software/distro-xfce-config
 # (tpg) mandriva stuff
 Requires:	distro-release-OpenMandriva
-Requires:	mandriva-theme-OpenMandriva
+Requires:	distro-theme-OpenMandriva
 Requires(pre):	%{name}-common = %{version}-%{release}
 Requires(preun):	%{name}-common = %{version}-%{release}
+%rename	mandriva-xfce-config-Free
+%rename	mandriva-xfce-config-Flash
+%rename	mandriva-xfce-config-One
+%rename	mandriva-xfce-config-Powerpack
 
 %description -n %{name}-OpenMandriva
 This package regroups all specific  files
-for %{distribution} Xfce desktop environment.
+for %{distribution} xfce desktop environment.
 
 %prep
 %setup -qn %{name}-%{snap}
