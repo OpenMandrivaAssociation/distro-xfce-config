@@ -1,9 +1,9 @@
-%define snap 20140903
+%define snap 20141201
 
 Summary:	%{distribution} xfce configuration files
 Name:		distro-xfce-config
 Version:	2014.0
-Release:	2
+Release:	1
 Group:		Graphical desktop/Xfce
 License:	GPLv2+
 URL:		https://abf.io/omv_software/distro-xfce-config
@@ -14,7 +14,7 @@ BuildArch:	noarch
 
 %description
 This package regroups all specific configuration
-files for %{distribution} xfce desktop environment.
+files for %{distribution} Xfce desktop environment.
 
 %package -n %{name}-common
 Summary:	%{distribution} xfce common configuration files
@@ -38,13 +38,12 @@ Conflicts:	xfdesktop < 4.6.0-4
 
 %description -n %{name}-common
 This package regroups all common configuration files
-for %{distribution} xfce desktop environment.
+for %{distribution} Xfce desktop environment.
 
 %package -n %{name}-OpenMandriva
 Summary:	%distribution xfce configuration files
 Group:		Graphical desktop/Xfce
 Url:		https://abf.io/omv_software/distro-xfce-config
-# (tpg) mandriva stuff
 Requires:	distro-release-OpenMandriva
 Requires:	distro-theme-OpenMandriva
 Requires(pre):	%{name}-common = %{version}-%{release}
@@ -56,7 +55,7 @@ Requires(preun):	%{name}-common = %{version}-%{release}
 
 %description -n %{name}-OpenMandriva
 This package regroups all specific  files
-for %{distribution} xfce desktop environment.
+for %{distribution} Xfce desktop environment.
 
 %prep
 %setup -qn %{name}-%{snap}
