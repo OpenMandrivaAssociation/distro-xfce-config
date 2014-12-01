@@ -1,4 +1,5 @@
 removed_sources:
   distro-xfce-config-20120314.tar.xz: f1e1e3d3130b275c2e794529469da70c49b6425f
-sources:
   distro-xfce-config-20140903.tar.xz: c408e927a7988a4b39f0ad4b9a4bcf00675124b7
+sources:
+  distro-xfce-config-20141201.tar.xz: de94c230126d2806c9cda8e7fc72216bc3f02ee3
