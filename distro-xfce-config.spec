@@ -1,9 +1,9 @@
-%define snap 20141201
+%define snap 20141205
 
 Summary:	%{distribution} xfce configuration files
 Name:		distro-xfce-config
 Version:	2014.0
-Release:	1
+Release:	2
 Group:		Graphical desktop/Xfce
 License:	GPLv2+
 URL:		https://abf.io/omv_software/distro-xfce-config
