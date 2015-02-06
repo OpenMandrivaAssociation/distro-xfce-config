@@ -3,7 +3,7 @@
 Summary:	%{distribution} xfce configuration files
 Name:		distro-xfce-config
 Version:	2015.0
-Release:	2
+Release:	3
 Group:		Graphical desktop/Xfce
 License:	GPLv2+
 URL:		https://abf.io/omv_software/distro-xfce-config
