@@ -3,7 +3,7 @@
 Summary:	%{distribution} xfce configuration files
 Name:		distro-xfce-config
 Version:	3.0
-Release:	1
+Release:	2
 Epoch:		1
 Group:		Graphical desktop/Xfce
 License:	GPLv2+
@@ -47,8 +47,8 @@ Group:		Graphical desktop/Xfce
 Url:		https://abf.io/omv_software/distro-xfce-config
 Requires:	distro-release-OpenMandriva
 Requires:	distro-theme-OpenMandriva
-Requires(pre):	%{name}-common = %{version}-%{release}
-Requires(preun):	%{name}-common = %{version}-%{release}
+Requires(pre):	%{name}-common = %{EVRD}
+Requires(preun):	%{name}-common = %{EVRD}
 %rename	mandriva-xfce-config-Free
 %rename	mandriva-xfce-config-Flash
 %rename	mandriva-xfce-config-One
