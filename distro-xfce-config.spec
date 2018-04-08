@@ -1,9 +1,10 @@
-%define snap 20141205
+%define snap 20180408
 
 Summary:	%{distribution} xfce configuration files
 Name:		distro-xfce-config
-Version:	2015.0
-Release:	3
+Version:	3.0
+Release:	1
+Epoch:		1
 Group:		Graphical desktop/Xfce
 License:	GPLv2+
 URL:		https://abf.io/omv_software/distro-xfce-config
@@ -21,7 +22,7 @@ Summary:	%{distribution} xfce common configuration files
 Group:		Graphical desktop/Xfce
 Requires(pre):	update-alternatives
 Requires:	ia_ora-xfce
-Requires:	elementary-icons
+Requires:	adwaita-icon-theme
 Requires:	distro-release-common
 %rename		mandriva-xfce-config-common
 
@@ -90,6 +91,7 @@ fi
 %{_sysconfdir}/xdg/Thunar/*
 %{_sysconfdir}/xdg/autostart/*
 %{_sysconfdir}/xdg/xfce4/*
+%{_sysconfdir}/xdg/menus/*
 %{_bindir}/xfce4-firstrun
 
 %files -n %{name}-OpenMandriva

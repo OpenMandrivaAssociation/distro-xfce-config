@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   distro-xfce-config-20141205.tar.xz: aee56dc3077e4551ab36e1163286d23128c24f4b
+sources:
+  distro-xfce-config-20180408.tar.xz: e1078ade118a8e66821e113f74056d57a9d2ee22
