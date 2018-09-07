@@ -3,7 +3,7 @@
 Summary:	%{distribution} xfce configuration files
 Name:		distro-xfce-config
 Version:	3.0
-Release:	2
+Release:	3
 Epoch:		1
 Group:		Graphical desktop/Xfce
 License:	GPLv2+
@@ -20,7 +20,7 @@ files for %{distribution} Xfce desktop environment.
 %package -n %{name}-common
 Summary:	%{distribution} xfce common configuration files
 Group:		Graphical desktop/Xfce
-Requires(pre):	update-alternatives
+Requires(pre):	chkconfig
 Requires:	ia_ora-xfce
 Requires:	adwaita-icon-theme
 Requires:	distro-release-common
@@ -30,7 +30,6 @@ Requires(pre):	xfconf
 Requires(preun):	xfconf
 #Requires:	xfce4-weather-plugin
 #Requires:	xfce4-cpugraph-plugin
-Requires:	dynamic
 %if %mdkversion > 2008100
 Conflicts:	xfce-utils <= 4.4.2-22
 Conflicts:	xfce4-power-manager < 0.6.4-3
