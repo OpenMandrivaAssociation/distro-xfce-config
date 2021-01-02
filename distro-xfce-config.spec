@@ -3,7 +3,7 @@
 Summary:	%{distribution} xfce configuration files
 Name:		distro-xfce-config
 Version:	3.0
-Release:	3
+Release:	4
 Epoch:		1
 Group:		Graphical desktop/Xfce
 License:	GPLv2+
@@ -21,7 +21,6 @@ files for %{distribution} Xfce desktop environment.
 Summary:	%{distribution} xfce common configuration files
 Group:		Graphical desktop/Xfce
 Requires(pre):	chkconfig
-Requires:	ia_ora-xfce
 Requires:	adwaita-icon-theme
 Requires:	distro-release-common
 %rename		mandriva-xfce-config-common
